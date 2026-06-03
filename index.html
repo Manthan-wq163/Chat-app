@@ -1,13 +1,72 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>chat-app</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>chat-app</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+
+
+  <div class="app-container">
+
+    <aside class="sidebar">
+
+      <div class="sidebar-header">
+        <span class="logo">💬 ChatBox</span>
+      </div>
+
+      <div class="search-box">
+        <input type="text" placeholder="Search contacts...">
+      </div>
+
+      <div class="contact-list">
+
+        <div class="contact-card active">
+          <h4>John Doe</h4>
+          <p>Hey, what's up?</p>
+        </div>
+        <div class="contact-card">
+          <h4>Jane Smith</h4>
+          <p>See you tomorrow!</p>
+        </div>
+      </div>
+
+    </aside>
+
+    <main class="chat-area">
+
+      <div class="chat-header">
+        <h3>John Doe</h3>
+      </div>
+
+      <div class="message-list">
+
+        <div class="message received">
+          <p>Hey! Did you finish the setup?</p>
+        </div>
+
+        <div class="message sent">
+          <p>Yes! It is running flawlessly.</p>
+        </div>
+
+      </div>
+
+      <div class="chat-input-area">
+        <input type="text" placeholder="Type a message...">
+        <button>Send</button>
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+
 </html>
