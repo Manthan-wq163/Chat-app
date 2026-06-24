@@ -21,4 +21,4 @@ function ChatWindow() {
     )
 }
 
-export default ChatWindow
+export default ChatWindow;

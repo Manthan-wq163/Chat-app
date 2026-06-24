@@ -2,11 +2,14 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 // import './index.css'
 import App from './App.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
 import '../style.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <AuthProvider>
+      <App/>
+    </AuthProvider>
   </StrictMode>,
 )
 
@@ -14,52 +17,52 @@ createRoot(document.getElementById('root')).render(
 
 
 
-window.addEventListener('DOMContentLoaded', () => {
+// window.addEventListener('DOMContentLoaded', () => {
 
-const messageInput = document.querySelector('.message-input');
-const sendButton = document.querySelector('#sendbtn');
-const messageList = document.querySelector('.message-list');
-
-
-function handleSendMessage() {
-  const typedText = messageInput.value;
-
-  if(typedText.trim() !=="") {
+// const messageInput = document.querySelector('.message-input');
+// const sendButton = document.querySelector('#sendbtn');
+// const messageList = document.querySelector('.message-list');
 
 
-     const newBubble = document.createElement('div');
-     newBubble.classList.add('message', 'sent');
+// function handleSendMessage() {
+//   const typedText = messageInput.value;
 
-     const textParagraph = document.createElement('p');
-     textParagraph.textContent = typedText;
-     newBubble.appendChild(textParagraph);
+//   if(typedText.trim() !=="") {
 
-     const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'});
-     const timeSpan = document.createElement('span');
-     timeSpan.textContent = currentTime;
-     timeSpan.classList.add('chat-timestamp');
-     newBubble.appendChild(timeSpan);
 
-     messageList.appendChild(newBubble);
+//      const newBubble = document.createElement('div');
+//      newBubble.classList.add('message', 'sent');
 
-     newBubble.scrollIntoView({ behaviour: 'smooth'});
+//      const textParagraph = document.createElement('p');
+//      textParagraph.textContent = typedText;
+//      newBubble.appendChild(textParagraph);
 
-    messageInput.value = "";
-  }
-}
+//      const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'});
+//      const timeSpan = document.createElement('span');
+//      timeSpan.textContent = currentTime;
+//      timeSpan.classList.add('chat-timestamp');
+//      newBubble.appendChild(timeSpan);
 
-if(sendButton && messageInput && messageList) {
+//      messageList.appendChild(newBubble);
 
-sendButton.addEventListener('click', handleSendMessage);
+//      newBubble.scrollIntoView({ behaviour: 'smooth'});
 
-messageInput.addEventListener('keydown', function(event) {
-  if(event.key === 'Enter') {
-    handleSendMessage();
-  }
-});
+//     messageInput.value = "";
+//   }
+// }
 
-} else {
-  console.error("Oops! JavaScript couldn't find your elements. Double check your HTML classes.");
-}
-});
+// if(sendButton && messageInput && messageList) {
+
+// sendButton.addEventListener('click', handleSendMessage);
+
+// messageInput.addEventListener('keydown', function(event) {
+//   if(event.key === 'Enter') {
+//     handleSendMessage();
+//   }
+// });
+
+// } else {
+//   console.error("Oops! JavaScript couldn't find your elements. Double check your HTML classes.");
+// }
+// });
 
